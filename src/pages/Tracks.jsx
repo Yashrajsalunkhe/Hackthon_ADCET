@@ -50,7 +50,13 @@ const Card = ({ innerColor, raysImage, outerImage }) => {
 const Tracks = () => {
   return (
     <div className="tracks-container">
-      <div className="relative font-angrybirds text-white text-[80px] md:text-[128px] leading-[100%] mb-[6rem]">
+      <div className="relative font-angrybirds text-[80px] md:text-[128px] leading-[100%] mb-[6rem] font-bold" style={{
+        background: 'linear-gradient(135deg, #00d4ff 0%, #9333ea 50%, #ff006e 100%)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+        filter: 'drop-shadow(0 4px 20px rgba(147, 51, 234, 0.8)) drop-shadow(0 0 40px rgba(0, 212, 255, 0.6))',
+      }}>
             TRACKS
             <img
             src={Piggy}

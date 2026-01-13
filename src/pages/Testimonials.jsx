@@ -26,7 +26,13 @@ const data = [
 const Testimonials = () => {
   return (
     <div className="px-4 md:px-8 lg:px-16">
-      <div className="relative font-angrybirds text-[64px] sm:text-[64px] md:text-[80px] lg:text-[96px] xl:text-[128px] leading-[100%] mb-12 md:mb-16 text-center">
+      <div className="relative font-angrybirds text-[64px] sm:text-[64px] md:text-[80px] lg:text-[96px] xl:text-[128px] leading-[100%] mb-12 md:mb-16 text-center font-bold" style={{
+        background: 'linear-gradient(135deg, #00d4ff 0%, #9333ea 50%, #ff006e 100%)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+        filter: 'drop-shadow(0 4px 20px rgba(147, 51, 234, 0.8)) drop-shadow(0 0 40px rgba(0, 212, 255, 0.6))',
+      }}>
       <img
         src={Piggy}
         alt="Piggy"

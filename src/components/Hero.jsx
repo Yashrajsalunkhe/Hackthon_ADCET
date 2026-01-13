@@ -90,7 +90,7 @@ const Hero = () => {
         >
 
           <DevfolioButton />
-          
+
           <div
             className="relative mt-10 px-8 py-4 bg-gradient-to-r font-angrybirds bg-[#2e0661] rounded-lg text-white font-bold text-lg text-center shadow-lg transform transition duration-300 hover:scale-105"
             style={{

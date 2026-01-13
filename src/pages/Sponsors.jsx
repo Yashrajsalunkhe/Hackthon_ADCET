@@ -151,10 +151,16 @@ const Sponsors = () => {
 
         {/* Heading */}
         <div className="flex flex-col md:flex-row gap-4">
-          <p className="capitalize text-[32px] md:text-7xl font-angrybirds text-[#FFFF5C] leading-none">
+          <p className="capitalize text-[32px] md:text-7xl font-angrybirds leading-none font-bold" style={{
+            color: '#FFFF5C',
+            textShadow: '0 4px 15px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(255, 255, 92, 0.6), 2px 2px 0 #8B4513, -2px -2px 0 #8B4513, 2px -2px 0 #8B4513, -2px 2px 0 #8B4513'
+          }}>
             OUR-PREVIOUS
           </p>
-          <p className="capitalize text-[80px] md:text-[128px] font-angrybirds text-[#FFFF5C] leading-none">
+          <p className="capitalize text-[80px] md:text-[128px] font-angrybirds leading-none font-bold" style={{
+            color: '#FFFF5C',
+            textShadow: '0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(255, 255, 92, 0.6), 3px 3px 0 #8B4513, -3px -3px 0 #8B4513, 3px -3px 0 #8B4513, -3px 3px 0 #8B4513'
+          }}>
             SPONSORS
           </p>
         </div>

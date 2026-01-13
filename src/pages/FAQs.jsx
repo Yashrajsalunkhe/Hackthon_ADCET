@@ -105,7 +105,9 @@ const FAQs = () => {
         >
           FAQs
         </h1>
-        <p className="text-gray-400 mt-2 text-[1rem] md:text-[2rem] font-angrybirds">
+        <p className="mt-2 text-[1rem] md:text-[2rem] font-angrybirds text-purple-300 font-semibold" style={{
+          textShadow: '0 2px 8px rgba(147, 51, 234, 0.8)'
+        }}>
           Quick answers to questions you may have
         </p>
       </div>
@@ -148,10 +150,12 @@ const FAQs = () => {
               >
                 <div
                   className="flex justify-between items-center cursor-pointer 
-                    transition-all duration-300 hover:text-pink-500"
+                    transition-all duration-300 hover:text-cyan-300"
                   onClick={() => toggleQuestion(index)}
                 >
-                  <span className="md:text-[32px] md:mb-[1.5rem] md:mt-[1.5rem] text-left text-[1rem] font-semibold font-tthoves">
+                  <span className="md:text-[32px] md:mb-[1.5rem] md:mt-[1.5rem] text-left text-[1rem] font-semibold font-tthoves text-white" style={{
+                    textShadow: '0 2px 4px rgba(0, 0, 0, 0.6)'
+                  }}>
                     {faq.question}
                   </span>
                   <span
@@ -169,7 +173,7 @@ const FAQs = () => {
                         : "max-h-0 opacity-0 -translate-y-2"
                     }`}
                 >
-                  <div className="mt-2 text-left md:text-[1.5rem] text-gray-300 transition-opacity duration-300">
+                  <div className="mt-2 text-left md:text-[1.5rem] transition-opacity duration-300 text-white/95 bg-white/5 p-4 rounded-lg">
                     {faq.answer}
                   </div>
                 </div>

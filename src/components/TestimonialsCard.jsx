@@ -5,21 +5,35 @@ import Spark from "../assets/Spark.svg";
 const TestimonialsCard = ({ content, name, collegeName }) => {
   return (
     <div 
-      className="w-[95%] md:w-[100%] max-w-[440px] h-auto min-h-[505px] flex items-center justify-center mx-auto px-4 py-6 relative"
+      className="w-[95%] md:w-[100%] max-w-[440px] h-auto min-h-[505px] flex items-center justify-center mx-auto px-4 py-6 relative group"
       style={{
-        borderRadius: '12px',
-        background: 'linear-gradient(to bottom, #FF5BB1, #626262)',
-        padding: '2px', 
+        borderRadius: '20px',
+        background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.4) 0%, rgba(147, 51, 234, 0.4) 50%, rgba(255, 0, 110, 0.4) 100%)',
+        padding: '3px',
+        transition: 'transform 0.3s ease',
       }}
+      onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'}
+      onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
     >
       <div
-        className="flex items-center justify-center w-full h-full"
+        className="flex items-center justify-center w-full h-full relative overflow-hidden"
         style={{
-          borderRadius: '10px', 
-          backgroundColor: '#14021e',
-          backgroundImage: 'linear-gradient(to bottom, rgba(179, 121, 27, 0.2) 40%, rgba(119, 119, 119, 0.3) 100%)',
+          borderRadius: '17px', 
+          background: 'linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(20, 2, 30, 0.95) 100%)',
+          backdropFilter: 'blur(20px)',
+          boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.1)',
         }}
       >
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-cyan-500/30 via-transparent to-purple-500/30 animate-pulse"></div>
+        </div>
+        
+        <img
+          src={PinkGrid}
+          alt="Pink Grid"
+          className="absolute inset-0 w-full h-full object-cover rounded-[10px] pointer-events-none opacity-10"
+        />
         <img
           src={PinkGrid}
           alt="Pink Grid"
@@ -40,10 +54,12 @@ const TestimonialsCard = ({ content, name, collegeName }) => {
           </div>
           <div className='flex flex-col gap-2'>
 
-          <div className="text-xl sm:text-[24px] font-angrybirds text-left text-white">
+          <div className="text-xl sm:text-[24px] font-angrybirds text-left text-cyan-300 font-bold" style={{
+            textShadow: '0 2px 8px rgba(0, 212, 255, 0.6)'
+          }}>
             {name}
           </div>
-          <div className="text-xl sm:text-[18px]  font-angrybirds text-left text-white">
+          <div className="text-xl sm:text-[18px] font-angrybirds text-left text-purple-300">
             {collegeName}
           </div>
           </div>

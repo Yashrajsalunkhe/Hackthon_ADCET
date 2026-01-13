@@ -9,6 +9,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Supercell-Magic';
   src: url('./assets/fonts/supercell-magic.ttf') format('truetype');
@@ -28,8 +29,60 @@
   font-family: 'TTHoves';
   src: url('/fonts/TT Hoves Pro Trial Regular.ttf') format('truetype');
   font-weight: 400;
-  /* Adjust the weight if needed */
   font-style: normal;
+}
+
+/* Enhanced text styling utilities */
+.text-gradient-fire {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-neon {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gaming {
+  background: linear-gradient(135deg, #FFD600 0%, #FF6D00 50%, #FF1744 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cyber {
+  background: linear-gradient(135deg, #00d4ff 0%, #9333ea 50%, #ff006e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(147, 51, 234, 0.5));
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Neon border effect */
+.neon-border {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(#0a0e27, #0a0e27) padding-box,
+              linear-gradient(135deg, #00d4ff, #9333ea, #ff006e) border-box;
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.5)); }
+  50% { filter: drop-shadow(0 0 25px rgba(147, 51, 234, 0.8)); }
 }
 
 
@@ -38,11 +91,59 @@
   display: none;
 }
 
-/* Apply font globally */
+/* Apply font globally with unique cyber gradient */
 body {
   color: white;
-  background: linear-gradient(#1F0030, #0E0212);
+  background: #0a0e27;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(138, 43, 226, 0.3) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(0, 212, 255, 0.25) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 20, 147, 0.3) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(76, 0, 255, 0.25) 0px, transparent 50%);
   font-family: 'TTHoves', sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Unique mesh grid overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(147, 51, 234, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 51, 234, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animated glow orbs */
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: pulse-orb 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pulse-orb {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes grid-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(50px); }
 }
 
 @keyframes float {
@@ -147,7 +248,7 @@ body {
 
 @keyframes scroll {
   0% {
-    transform: translateX(0) ;
+    transform: translateX(0);
   }
 
   100% {
